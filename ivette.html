@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte de Resonancia Magnética - Rodilla</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --bg-color: #f8f9fa;
+            --text-color: #333;
+            --border-color: #bdc3c7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .report-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .header {
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .patient-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+
+        .info-item {
+            margin: 0;
+        }
+
+        .info-item strong {
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+
+        .image-section {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .image-card {
+            flex: 1;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .image-caption {
+            font-size: 0.9em;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .content-box {
+            background: #fff;
+            margin-bottom: 20px;
+        }
+
+        .content-box p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .highlight {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-left: 4px solid var(--accent-color);
+            border-radius: 0 4px 4px 0;
+        }
+
+        /* Estilos para las tarjetas expandibles (Acordeón) */
+        details {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-bottom: 15px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+
+        details[open] {
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.15);
+        }
+
+        summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--primary-color);
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5em;
+            color: var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        details[open] summary::after {
+            content: '−';
+            transform: rotate(180deg);
+        }
+
+        .details-content {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed var(--border-color);
+            font-size: 0.95em;
+            color: #444;
+        }
+
+        .details-content h4 {
+            color: var(--secondary-color);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .details-content ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
+        
+        .details-content li {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="report-container">
+        
+        <div class="header">
+            <h1>Reporte Radiológico Estructural y Clínico</h1>
+            <p>Estudio: Resonancia Magnética (RM) de Rodilla</p>
+        </div>
+
+        <div class="patient-info">
+            <p class="info-item"><strong>Paciente:</strong> RAMIREZ PRINCIPE, IVETTE SILENE</p>
+            <p class="info-item"><strong>ID Paciente:</strong> 17077794</p>
+            <p class="info-item"><strong>Edad:</strong> 34 Años</p>
+            <p class="info-item"><strong>Sexo:</strong> Femenino</p>
+            <p class="info-item"><strong>Lateralidad:</strong> Rodilla Izquierda</p>
+            <p class="info-item"><strong>Fecha del Estudio:</strong> 26/03/2026</p>
+        </div>
+
+        <div class="image-section">
+            <div class="image-card">
+                <img src="imagen1.jpg" alt="RM Sagital T1">
+                <p class="image-caption">Fig 1. Plano Sagital (T1/DP). Se observa línea de degeneración intrasustancia en el cuerno posterior del menisco medial, sin contacto con superficies articulares.</p>
+            </div>
+            <div class="image-card">
+                <img src="imagen2.jpg" alt="RM Sagital T2 Fat Sat">
+                <p class="image-caption">Fig 2. Plano Sagital (T2 Fat Sat). Confirmación de retención de fluidos en el menisco. Se aprecia leve sinovitis reactiva (derrame articular brillante).</p>
+            </div>
+        </div>
+
+        <h2>1. Diagnóstico Principal (Dx)</h2>
+        <div class="content-box highlight">
+            <ul>
+                <li><strong>Degeneración intrasustancia (Grado I/II)</strong> en el cuerno posterior del menisco medial (común para la edad). No presenta rotura transfixiante ni fragmentos inestables.</li>
+                <li><strong>Leve sinovitis reactiva</strong> (derrame articular leve).</li>
+                <li>Mecánica articular estable: Integridad conservada del pivote central (LCA, LCP), ligamentos colaterales, aparato extensor y cartílago femorotibial. Ausencia de edema óseo.</li>
+            </ul>
+        </div>
+
+        <h2>2. Fisiopatología Molecular. ¿Qué está pasando y por qué?</h2>
+        <div class="content-box">
+            <p>El cuadro clínico no obedece a un traumatismo agudo, sino a una alteración metabólica focal. Debido al estrés mecánico, los fibrocondrocitos en el interior del menisco medial han desorganizado su red de colágeno y acumulado mucina/proteoglicanos. Estas moléculas retienen agua libre (visible como una línea brillante en la RM). Al alterar levemente la absorción de impactos, la membrana sinovial detecta fricción y libera citoquinas inflamatorias, provocando un exudado capilar que genera el leve derrame articular. El dolor proviene de la distensión de la cápsula por este líquido extra y de la tracción de las terminaciones nerviosas en la "zona roja" periférica del menisco.</p>
+        </div>
+
+        <h2>3. Plan de Tratamiento y Manejo (si se presenta dolor)( haga clic para expandir)</h2>
+        <div class="content-box">
+            <p>El abordaje es conservador, enfocado en controlar la reactividad sinovial y optimizar la biomecánica de la rodilla para descargar el menisco medial.</p>
+
+            <details>
+                <summary>Terapia Antiinflamatoria (Farmacológica)</summary>
+                <div class="details-content">
+                    <p>Para controlar la sinovitis reduciendo al mínimo los efectos secundarios gastrointestinales, se indica un AINE inhibidor selectivo de la COX-2 (que protege la mucosa gástrica), combinado con terapia tópica y física.</p>
+                    <h4>Régimen Estructurado:</h4>
+                    <ul>
+                        <li><strong>Vía Oral: Celecoxib (200 mg).</strong> Tomar 1 cápsula cada 24 horas, preferiblemente con alimentos, durante un ciclo corto de <strong>5 a 7 días</strong>. (Alternativa de bajo impacto GI: Meloxicam 15mg cada 24h).</li>
+                        <li><strong>Vía Tópica: Diclofenaco en gel (2%).</strong> Aplicar una capa fina con un ligero masaje circular directamente sobre la cara interna de la rodilla (interlínea medial). Repetir cada 8 horas durante <strong>10 a 14 días</strong>.</li>
+                        <li><strong>Crioterapia (Hielo):</strong> Aplicar compresas frías (nunca hielo directo sobre la piel) durante 15-20 minutos al final del día o después de cualquier caminata prolongada para generar vasoconstricción y reducir el exudado sinovial.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Fisioterapia y Biomecánica</summary>
+                <div class="details-content">
+                    <p>El objetivo es crear un "corsé muscular" fuerte alrededor de la rodilla (cuádriceps e isquiosurales) para que los músculos absorban el impacto al caminar, quitándole carga al menisco desgastado.</p>
+                    <h4>Fase 1: Control y Activación (Semanas 1-2)</h4>
+                    <ul>
+                        <li><strong>Isométricos de Cuádriceps:</strong> Sentada con la pierna estirada, colocar una toalla enrollada bajo la rodilla. Apretar la rodilla hacia abajo aplastando la toalla durante 5 segundos. Repetir 3 series de 10.</li>
+                        <li><strong>Elevación de Pierna Recta (SLR):</strong> Acostada boca arriba, flexionar la rodilla sana. Mantener la rodilla afectada totalmente recta y elevar la pierna unos 30 cm del suelo. 3 series de 12 repeticiones.</li>
+                    </ul>
+                    <h4>Fase 2: Fortalecimiento sin carga axial (Semanas 3-4)</h4>
+                    <ul>
+                        <li><strong>Puente de Glúteos:</strong> Tumbada boca arriba con rodillas flexionadas, elevar la pelvis apretando glúteos e isquiotibiales.</li>
+                        <li><strong>Bicicleta estática:</strong> Sin resistencia, sillín alto (para no hiperflexionar la rodilla). 15-20 minutos diarios para lubricar la articulación y barrer el líquido sinovial inflamatorio.</li>
+                    </ul>
+                    <h4>Fase 3: Propiocepción y Retorno (Semanas 5+)</h4>
+                    <ul>
+                        <li><strong>Mini-sentadillas asistidas:</strong> Bajar máximo a 45 grados (NUNCA cuclillas profundas).</li>
+                        <li><strong>Equilibrio unipodal:</strong> Mantenerse sobre la pierna afectada en el suelo durante 30 segundos, progresando luego a superficies inestables (ej. un cojín o bosu).</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>Restricciones Temporales de Actividad</summary>
+                <div class="details-content">
+                    <ul>
+                        <li><strong>Evitar cuclillas profundas:</strong> Flexionar la rodilla más allá de los 90 grados bajo carga ejerce una presión extrema de "pellizco" sobre el cuerno posterior del menisco medial.</li>
+                        <li><strong>Cero giros de pivote:</strong> Evitar actividades donde el pie se quede clavado en el suelo y el cuerpo gire bruscamente sobre la rodilla.</li>
+                        <li><strong>Impacto:</strong> Suspender trote, saltos o caminatas en terrenos muy irregulares hasta que el derrame haya remitido y la musculatura estabilizadora esté fortalecida.</li>
+                    </ul>
+                </div>
+            </details>
+            
+
+
+        </div>
+
+    </div>
+
+</body>
+</html>
